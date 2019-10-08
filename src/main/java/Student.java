@@ -39,4 +39,12 @@ public class Student {
 
         System.out.println(test1.getGrades());
     }
+
+    public double getGradeAverage() {
+        double total = 0;
+        for (Integer grade: grades) {
+            total += grade;
+        }
+        return total / grades.size();
+    }
 }

@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 public class StudentTest {
 
+
+
+
     @Test
     public void checkStudentID(){
         Student test1 = new Student(1234567, "Gary Oak");
@@ -42,11 +45,26 @@ public class StudentTest {
         expected.add(45);
         expected.add(60);
 
-        System.out.println(test1.getGrades());
         assertEquals(expected, test1.getGrades());
     }
 
 
+    @Test
+    public void checkStudentGradeAverage(){
+        Student test1 = new Student(1234567, "Gary Oak");
+
+        test1.addGrade(90);
+        test1.addGrade(45);
+        test1.addGrade(60);
+
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(90);
+        expected.add(45);
+        expected.add(60);
+
+
+        assertEquals(65, test1.getGradeAverage(), 0);
+    }
 
 
 }
